@@ -1,7 +1,13 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { Button, Container, Table } from "react-bootstrap";
+import {
+  Button,
+  Container,
+  OverlayTrigger,
+  Table,
+  Tooltip,
+} from "react-bootstrap";
 import { useMutation, useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
 import DeleteProduct from "../components/modals/DeleteProduct";
@@ -33,6 +39,17 @@ export default function ListProductAdmin() {
     setIdDelete(id);
     handleShow();
   };
+
+  const renderTooltip = (item) => (
+    <Tooltip
+      id="button-tooltip"
+      style={{ widt: "100%" }}
+      className="loadDesc "
+      {...item}
+    >
+      {item}
+    </Tooltip>
+  );
 
   const deleteById = useMutation(async (id) => {
     try {
@@ -96,7 +113,16 @@ export default function ListProductAdmin() {
                   {convertRupiah.convert(item?.price)}
                 </td>
                 <td className="align-middle">
-                  {item?.desc.substring(0, 17)}...
+                  <OverlayTrigger
+                    placement="left"
+                    delay={{ show: 250, hide: 400 }}
+                    overlay={renderTooltip(item?.desc)}
+                  >
+                    <Button className="listAdmin text-dark">
+                      {" "}
+                      {item?.desc.slice(0, 15)}...
+                    </Button>
+                  </OverlayTrigger>
                 </td>
                 <td className="align-middle">
                   <Button

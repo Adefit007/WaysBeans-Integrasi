@@ -88,7 +88,7 @@ export default function UpdateProduct() {
         <Row>
           <Col>
             <Row>
-              <Col xs={12} md={7}>
+              <Col xs={12} md={8} className="mb-2">
                 <Form onSubmit={(e) => handleSubmit.mutate(e)}>
                   <Form.Group>
                     <Form.Control
@@ -125,7 +125,7 @@ export default function UpdateProduct() {
                       value={form.desc}
                       placeholder="Description Product"
                       className="mb-3"
-                      rows={3}
+                      rows={4}
                       onChange={handleChange}
                     />
                     <div
@@ -159,12 +159,12 @@ export default function UpdateProduct() {
                   </Button>
                 </Form>
               </Col>
-              <Col xs={12} md={5}>
+              <Col xs={12} md={4} className="mb-2">
                 {preview && (
                   <img
                     src={preview}
                     alt="view"
-                    style={{ width: "70%", borderRadius: "10px" }}
+                    style={{ width: "80%", borderRadius: "10px" }}
                   />
                 )}
               </Col>

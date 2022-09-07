@@ -63,7 +63,7 @@ export default function Transaction() {
                     className="text-center w-75 m-auto my-3 fw-semibold"
                     style={{
                       backgroundColor: "rgba(0, 209, 255, .3)",
-                      color: "#00D1FF",
+                      color: "#34a8eb",
                     }}
                   >
                     {items?.status}
