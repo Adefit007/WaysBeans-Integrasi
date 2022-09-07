@@ -44,7 +44,9 @@ export default function Profile() {
           </Col>
           <Col>
             <h2 className="text-primer fw-bold mb-3">My Transactions</h2>
-            <Transaction />
+            <div style={{ width: "100%", height: "400px", overflow: "scroll" }}>
+              <Transaction />
+            </div>
           </Col>
         </Row>
       </Container>
