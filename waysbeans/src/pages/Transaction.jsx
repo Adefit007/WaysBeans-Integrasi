@@ -39,7 +39,7 @@ export default function Transaction() {
               <tr key={index}>
                 <td className="align-middle">{index + 1}</td>
                 <td className="align-middle">{item.user.name}</td>
-                <td className="align-middle">{item.user.address}</td>
+                <td className="align-middle">Jalan Fatmawati no. 36</td>
                 <td className="align-middle">{item.id}</td>
                 <td className="align-middle">{Rupiah.convert(item?.total)}</td>
                 <td

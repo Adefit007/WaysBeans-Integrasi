@@ -12,12 +12,14 @@ export default function ListProduct({ item }) {
           src={item.image}
           className="imageProduct fluid"
         />
-        <Card.Body className="text-danger bgCard">
-          <Card.Title className="fw-bold">{item.title}</Card.Title>
-          <Card.Text className="m-0 ">
+        <Card.Body className=" bgCard">
+          <Card.Title className="fw-bold text-primer">{item.title}</Card.Title>
+          <Card.Text className="m-0 text-primer2">
             {convertRupiah.convert(item.price)}
           </Card.Text>
-          <Card.Text className="m-0">Stock : {item.stock}</Card.Text>
+          <Card.Text className="m-0 text-primer2">
+            Stock : {item.stock}
+          </Card.Text>
         </Card.Body>
       </Card>
     </div>

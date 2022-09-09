@@ -6,6 +6,7 @@ import { useQuery } from "react-query";
 import { API } from "../config/api";
 import Rupiah from "rupiah-format";
 import imageTrans from "../assets/notFound.webp";
+import dateFormat from "dateformat";
 
 export default function Transaction() {
   let { data: transactions } = useQuery("transactionsCache", async () => {
@@ -32,15 +33,18 @@ export default function Transaction() {
                             "http://localhost:5000/uploads/" +
                             data?.product?.Image
                           }
-                          alt="aa"
-                          style={{ width: 100 }}
+                          alt="fotokopi"
+                          style={{ width: 100, borderRadius: 5 }}
                         />
                       </Col>
                       <Col sm={8}>
                         <div>
                           <h5>{data?.product?.Title}</h5>
                           <p>
-                            <b>Saturday</b>, <span>5 September 2022</span>{" "}
+                            <b> {dateFormat(items?.created_at, "dddd, ")}</b>
+                            <span>
+                              {dateFormat(items.created_at, "d mmmm yyyy ")}
+                            </span>{" "}
                           </p>
                           <p>Qty: {data?.qty}</p>
                         </div>

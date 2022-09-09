@@ -176,3 +176,14 @@ code {
 .loadDesc > .loadDesc-inner {
   max-width: none !important;
 }
+
+.notif {
+  border-radius: 100% !important;
+  background-color: #895840;
+  color: white;
+  margin-left: -10px;
+  padding-left: 6px;
+  padding-right: 6px;
+  position: absolute;
+  font-size: smaller;
+}

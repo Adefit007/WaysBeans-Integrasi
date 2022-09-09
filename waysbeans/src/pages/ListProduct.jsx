@@ -40,14 +40,14 @@ export default function ListProductAdmin() {
     handleShow();
   };
 
-  const renderTooltip = (item) => (
+  const renderTooltip = (desc) => (
     <Tooltip
       id="button-tooltip"
       style={{ widt: "100%" }}
       className="loadDesc "
-      {...item}
+      {...desc}
     >
-      {item}
+      {desc}
     </Tooltip>
   );
 
