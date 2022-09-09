@@ -12,6 +12,7 @@ type LoginRequest struct {
 }
 
 type LoginResponse struct {
+	ID     int    `json:"id" gorm:"type: int"`
 	Name   string `json:"name" gorm:"type: varchar(255)"`
 	Email  string `json:"email" gorm:"type: varchar(255)"`
 	Token  string `json:"token" gorm:"type: varchar(255)"`

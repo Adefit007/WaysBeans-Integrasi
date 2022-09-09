@@ -50,7 +50,7 @@ func (h *handlersProfile) GetProfile(w http.ResponseWriter, r *http.Request) {
 		response := dto.ErrorResult{Code: http.StatusBadRequest, Message: err.Error()}
 		json.NewEncoder(w).Encode(response)
 	}
-	profiles.Image = path_file + profiles.Image
+	// profiles.Image = path_file + profiles.Image
 
 	w.WriteHeader(http.StatusOK)
 	response := dto.SuccessResult{Code: http.StatusOK, Data: convertResponseProfile(profiles)}
@@ -110,6 +110,7 @@ func (h *handlersProfile) UpdateProfile(w http.ResponseWriter, r *http.Request) 
 	postalcode, _ := strconv.Atoi(r.FormValue("postal_code"))
 	request := profiledto.UpdateProfile{
 		Address:    r.FormValue("address"),
+		Phone:    r.FormValue("phone"),
 		PostalCode: postalcode,
 		Image:      filename,
 	}
@@ -123,6 +124,9 @@ func (h *handlersProfile) UpdateProfile(w http.ResponseWriter, r *http.Request) 
 
 	if (request.Address) != "" {
 		profile.Address = request.Address
+	}
+	if (request.Phone) != "" {
+		profile.Phone = request.Phone
 	}
 
 	if request.PostalCode != 0 {

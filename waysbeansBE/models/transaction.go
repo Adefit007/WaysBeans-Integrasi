@@ -10,8 +10,9 @@ type Transaction struct {
 	Total     int       `json:"total"`
 	CartID    []int     `json:"cart_id" gorm:"-"`
 	Cart      []Cart    `json:"product" gorm:"many2many:transaction_cart;constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
-	CreatedAt time.Time `json:"created_at" gorm:"-"`
-	UpdatedAt time.Time `json:"updated_at" gorm:"-"`
+	CreatedAt time.Time `json:"created_at"`
+	UpdatedAt time.Time `json:"-"`
+	
 }
 
 type TransactionResponse struct {
