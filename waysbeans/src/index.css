@@ -20,6 +20,22 @@ code {
   background-color: #f7e6da !important ;
 }
 
+.btn-search {
+  background-color: #613d2b !important;
+  font-weight: 600 !important;
+  color: white !important;
+  width: 100px;
+  height: 40px;
+  border-color: #613d2b !important;
+  border: solid 3px #613d2b !important;
+}
+
+.btn-search:hover {
+  background-color: white !important;
+  color: #613d2b !important;
+  border: solid 3px #613d2b !important;
+}
+
 /* Button Auth */
 .btn-log {
   background-color: white !important;

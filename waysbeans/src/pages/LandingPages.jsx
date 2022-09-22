@@ -1,5 +1,13 @@
 import React, { useContext, useState } from "react";
-import { Card, CardImg, Col, Container, Row } from "react-bootstrap";
+import {
+  Button,
+  Card,
+  CardImg,
+  Col,
+  Container,
+  FormLabel,
+  Row,
+} from "react-bootstrap";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import landingimage from "../assets/landingimage.svg";
@@ -24,6 +32,21 @@ export default function LandingPages() {
   });
   console.log(products);
 
+  const [filter, setFilter] = useState("");
+
+  let searchText = (e) => {
+    setFilter(e.target.value);
+  };
+
+  let dataFilter = products?.filter((item) => {
+    return Object.keys(item).some((key) =>
+      item[key]
+        .toString()
+        .toLowerCase()
+        .includes(filter.toString().toLowerCase())
+    );
+  });
+
   return (
     <div>
       <NavbarAuth setShow={setShow} show={show} />
@@ -34,7 +57,19 @@ export default function LandingPages() {
       </Container>
       <Container className="mt-5 mb-3 container-fluid">
         <Row>
-          {products?.map((item, index) => (
+          <div class="input-group mb-5">
+            <input
+              type="search"
+              className="form-control rounded"
+              placeholder="Search"
+              aria-label="Search"
+              onChange={searchText.bind(this)}
+              aria-describedby="search-addon"
+              id="search"
+            />
+            <FormLabel htmlFor="search"></FormLabel>
+          </div>
+          {dataFilter?.map((item, index) => (
             <Col xs={12} md={3} className="mb-2">
               <Link
                 className="text-decoration-none"

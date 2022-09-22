@@ -40,13 +40,9 @@ export default function ListProductAdmin() {
     handleShow();
   };
 
+  //Tooltip Here
   const renderTooltip = (desc) => (
-    <Tooltip
-      id="button-tooltip"
-      style={{ widt: "100%" }}
-      className="loadDesc "
-      {...desc}
-    >
+    <Tooltip id="button-tooltip" className="loadDesc">
       {desc}
     </Tooltip>
   );
@@ -118,8 +114,7 @@ export default function ListProductAdmin() {
                     delay={{ show: 250, hide: 400 }}
                     overlay={renderTooltip(item?.desc)}
                   >
-                    <Button className="listAdmin text-dark">
-                      {" "}
+                    <Button className="listAdmin">
                       {item?.desc.slice(0, 15)}...
                     </Button>
                   </OverlayTrigger>
