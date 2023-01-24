@@ -1,13 +1,5 @@
 import React, { useContext, useState } from "react";
-import {
-  Button,
-  Card,
-  CardImg,
-  Col,
-  Container,
-  FormLabel,
-  Row,
-} from "react-bootstrap";
+import { Card, CardImg, Col, Container, FormLabel, Row } from "react-bootstrap";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import landingimage from "../assets/landingimage.svg";
